@@ -1,0 +1,152 @@
+[
+  {
+    "id": "fixit",
+    "title": "FixIt App",
+    "tags": ["MOBILE APP", "UI/UX", "SERVICE MARKETPLACE"],
+    "laptopVideoUrl": "/assets/FixitMenu.mp4",
+    "shortDescription": "FixIt is a service booking platform designed to help users quickly find, request, and manage repair or maintenance services.",
+    "details": {
+      "introParagraphs": [
+        "FixIt App is a practical service platform created to connect users with reliable repair and maintenance professionals. The project focuses on making everyday service requests simple, fast, and accessible through a clean digital experience.",
+        "The goal of the app is to reduce the friction normally involved in finding help for home, device, or general repair needs. Users can browse available services, submit requests, view details, and move through the booking flow with a straightforward interface designed for clarity and trust."
+      ],
+      "highlights": [
+        {
+          "image": "/assets/fixit-devices.png",
+          "caption": "Device brand selection section with clear repair categories for iPhone, Samsung Galaxy, and Google Pixel users."
+        },
+        {
+          "image": "/assets/fixit-model-selection.png",
+          "caption": "Step-by-step model selection flow showing available repair options and starting prices for each device."
+        },
+        {
+          "image": "/assets/fixit-repair-type.png",
+          "caption": "Repair type selection screen where users can choose services like screen replacement, battery replacement, or charging port repair."
+        },
+        {
+          "image": "/assets/fixit-contact-details.png",
+          "caption": "Contact details step with a booking summary and optional notes field for describing the issue."
+        },
+        {
+          "image": "/assets/fixit-schedule.png",
+          "caption": "Appointment scheduling interface with available time slots, disabled booked times, and clear pricing details."
+        },
+        {
+          "image": "/assets/fixit-confirmation.png",
+          "caption": "Booking confirmation screen that gives users a clear success message and appointment summary."
+        }
+      ],
+      "mainChallenge": {
+        "text": "The main challenge was designing an experience that feels simple while still supporting multiple service categories, user requests, and booking-related details. The interface needed to be clear enough for first-time users while flexible enough to support a growing service marketplace. A major focus was placed on intuitive navigation, strong visual hierarchy, and reducing the number of steps required to request a service.",
+        "image": "/assets/fixit-challenge.jpg",
+        "caption": "User flow and service request structure optimized for speed and clarity"
+      },
+      "techStack": [
+        "React for the front end",
+        "React Native or mobile-first UI for app experience",
+        "Node.js for server-side logic",
+        "Express for API routing",
+        "MongoDB for database storage",
+        "Firebase or JWT for authentication",
+        "Cloud storage for service images and user uploads",
+        "Figma for UI/UX design and prototyping"
+      ]
+    }
+  },
+  {
+    "id": "smatchit",
+    "title": "Smatchit",
+    "tags": [
+      "FRONTEND",
+      "UI/UX IMPLEMENTATION",
+      "TAILWIND CSS",
+      "JAVASCRIPT",
+      "HTML"
+    ],
+    "laptopVideoUrl": "/assets/smatchit.mp4",
+    "shortDescription": "A responsive recruitment landing page designed for essential trades, implemented from a Figma design using modern frontend technologies.",
+    "details": {
+      "introParagraphs": [
+        "Smatchit is a modern recruitment web platform tailored specifically for essential trades such as hospitality, catering, retail, and bakeries. The goal of the platform is to provide a 'human and efficient' hiring experience, prioritizing real-world skills over perfect CVs.",
+        "For this project, I was tasked with bringing a high-fidelity Figma design to life. I implemented the frontend architecture using HTML, JavaScript, and Tailwind CSS, ensuring a pixel-perfect, highly responsive user interface that gracefully adapts from desktop to mobile screens."
+      ],
+      "highlights": [
+        {
+          "image": "/assets/hero-section.png",
+          "caption": "The hero section targeting essential trades ('métiers essentiels'), featuring clean typography and categorized industry cards like Restauration and Hôtellerie."
+        },
+        {
+          "image": "/assets/value-proposition.png",
+          "caption": "Value proposition grid highlighting the platform's core benefits: fast connection, skill valuation, time-saving for recruiters, and a secure experience."
+        },
+        {
+          "image": "/assets/testimonials.png",
+          "caption": "Responsive grid layout used for the user testimonials section, showcasing structured data and star ratings."
+        },
+        {
+          "image": "/assets/job-board.png",
+          "caption": "Job board interface displaying active postings with location tags, contract types (CDI/Apprentissage), and clear call-to-action buttons."
+        },
+        {
+          "image": "/assets/blogs.png",
+          "caption": "Blog and resources section featuring styled article cards with read times, publication dates, and category tags."
+        }
+      ],
+      "mainChallenge": {
+        "text": "The primary challenge was translating the detailed Figma designs into a fully responsive interface without relying on heavy UI component libraries. I utilized Tailwind CSS utility classes to build custom, reusable card components for the testimonials and job listings, ensuring the complex grid layouts maintained visual consistency and strict alignment across all viewport sizes."
+      },
+      "techStack": ["HTML5", "JavaScript", "Tailwind CSS", "Figma"]
+    }
+  },
+  {
+    "id": "privacy-pipeline",
+    "title": "Privacy Pipeline",
+    "tags": ["DEVSECOPS", "CI/CD", "SECURITY", "PRIVACY", "GITHUB ACTIONS"],
+    "laptopVideoUrl": "/assets/PrivacyPipeline.mp4",
+    "shortDescription": "Privacy Pipeline is a DevSecOps-focused CI security project that automatically scans pull requests for secrets, vulnerabilities, dependency risks, and privacy leaks.",
+    "details": {
+      "introParagraphs": [
+        "Privacy Pipeline is a dissertation project focused on integrating automated security and privacy scanning into a GitHub Actions pull request workflow. The project demonstrates how DevSecOps practices can be applied early in the development lifecycle using a shift-left security approach.",
+        "The system is designed to be lightweight, explainable, and fully open-source. Instead of building a complex production deployment platform, the project focuses on CI-based scanning, structured evidence generation, and configurable policy gates that decide whether a pull request should pass or fail."
+      ],
+      "highlights": [
+        {
+          "image": "/assets/static.png",
+          "caption": "Static security workflow showing automated CI checks for secrets, CodeQL analysis, dependency scanning, and a custom PII scanner with policy-based pass/fail results"
+        },
+        {
+          "image": "/assets/sqlscan.png",
+          "caption": "SQLMap scan workflow validating SQL injection testing in GitHub Actions and uploading the scan report as CI evidence"
+        },
+        {
+          "image": "/assets/zapscan.png",
+          "caption": "ZAP baseline scan running against a local demo application, producing an automated web security report within the CI pipeline"
+        },
+        {
+          "image": "/assets/zap-report-1.png",
+          "caption": "ZAP report summary showing detected alert counts grouped by severity level, including high, medium, low, and informational findings"
+        },
+        {
+          "image": "/assets/zap-report-2.png",
+          "caption": "Detailed ZAP results showing identified web security issues such as SQL injection, missing security headers, and cookie configuration weaknesses"
+        }
+      ],
+      "mainChallenge": {
+        "text": "The main challenge was balancing security coverage with simplicity. A DevSecOps pipeline can easily become too complex if too many enterprise tools or deployment features are added. This project keeps the scope focused on CI scanning only, using modular tools such as Gitleaks, CodeQL, Trivy or OSV-Scanner, dependency-review-action, and a custom Python-based PII scanner. The pipeline emphasizes clear policy decisions, reproducible results, and structured artifacts that can be used as security evidence.",
+        "image": "/assets/privacy-pipeline-policy.jpg",
+        "caption": "Policy-driven CI gate that evaluates scanner results before allowing pull requests to pass"
+      },
+      "techStack": [
+        "GitHub Actions for CI workflow automation",
+        "Gitleaks for secret exposure detection",
+        "GitHub CodeQL for static application security testing",
+        "Trivy or OSV-Scanner for dependency and supply-chain vulnerability scanning",
+        "dependency-review-action for pull request dependency risk checks",
+        "Python for the custom PII scanner and risk aggregation scripts",
+        "YAML configuration for policy and allowlist management",
+        "SARIF for structured security reporting",
+        "GitHub Actions artifacts and job summaries for evidence generation"
+      ]
+    }
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "greeting": "Hello!",
+  "bioParagraph1": "I am a Full Stack JavaScript Engineer with a backend-first mindset and a passion for building scalable, reliable features using Node.js and React. My experience centers on architecting RESTful APIs and diagnosing complex production issues to ensure system stability and performance.",
+  "bioParagraph2": "I also have experience streamlining development workflows by creating automated CI/CD pipelines for my projects. I thrive on solving technical challenges and delivering polished, user-focused applications.",
+  "email": "phondropoulos@gmail.com",
+  "linkedinUrl": "http://www.linkedin.com/in/panagiotis-hondropoulos",
+  "resumeUrl": "/assets/Panagiotis Resume 2026.docx",
+  "profileVideoUrl": "/assets/profile-loop.mp4"
+}
