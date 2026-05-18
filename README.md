@@ -1,4 +1,4 @@
-# PH Portfolio
+# My Portfolio
 
 A responsive personal portfolio website that presents selected projects, professional background, and contact information in a polished recruiter-friendly format.
 
