@@ -39,7 +39,7 @@ function ProjectMedia({ activeProject, isDetailView }) {
           className={`absolute object-fill transition-all duration-700 ease-in-out ${
             isDetailView
               ? "left-0 top-[5%] z-20 h-[90%] w-full origin-center rounded-2xl shadow-2xl [transform:perspective(1000px)_rotateY(0deg)_rotateX(0deg)_rotateZ(0deg)]"
-              : "left-[24.2%] top-[18.5%] z-0 h-[56%] w-[49%] origin-left rounded-none [transform:perspective(500px)_rotateY(14deg)_rotateX(8deg)_rotateZ(-1.3deg)] lg:left-[24%] lg:top-[17.4%] lg:h-[60%] lg:w-[54%] lg:[transform:perspective(900px)_rotateY(14deg)_rotateX(8deg)_rotateZ(-1.3deg)]"
+              : "left-[24.2%] top-[18.5%] z-0 h-[56%] w-[49%] origin-left rounded-none [transform:perspective(500px)_rotateY(14deg)_rotateX(8deg)_rotateZ(-1.3deg)] lg:left-[24%] lg:top-[17.4%] lg:h-[60%] lg:w-[52%] lg:[transform:perspective(900px)_rotateY(14deg)_rotateX(8deg)_rotateZ(-1.3deg)]"
           }`}
         />
       </div>
