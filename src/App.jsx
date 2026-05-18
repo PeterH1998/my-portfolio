@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout";
 import Projects from "./pages/Projects";
-import ProjectDetail from "./components/ProjectDetail"; // We will create this next
+import ProjectDetail from "./components/ProjectDetail";
 import About from "./pages/About";
 
 export default function App() {
@@ -11,7 +11,6 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Navigate to="/projects" replace />} />
 
-          {/* Projects is now a parent route */}
           <Route path="projects" element={<Projects />}>
             <Route path=":projectId" element={<ProjectDetail />} />
           </Route>

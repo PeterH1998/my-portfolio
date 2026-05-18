@@ -38,7 +38,7 @@
       ],
       "mainChallenge": {
         "text": "The main challenge was designing an experience that feels simple while still supporting multiple service categories, user requests, and booking-related details. The interface needed to be clear enough for first-time users while flexible enough to support a growing service marketplace. A major focus was placed on intuitive navigation, strong visual hierarchy, and reducing the number of steps required to request a service.",
-        "image": "/assets/fixit-challenge.jpg",
+        "image": "/assets/fixit-schedule.png",
         "caption": "User flow and service request structure optimized for speed and clarity"
       },
       "techStack": [
@@ -133,7 +133,7 @@
       ],
       "mainChallenge": {
         "text": "The main challenge was balancing security coverage with simplicity. A DevSecOps pipeline can easily become too complex if too many enterprise tools or deployment features are added. This project keeps the scope focused on CI scanning only, using modular tools such as Gitleaks, CodeQL, Trivy or OSV-Scanner, dependency-review-action, and a custom Python-based PII scanner. The pipeline emphasizes clear policy decisions, reproducible results, and structured artifacts that can be used as security evidence.",
-        "image": "/assets/privacy-pipeline-policy.jpg",
+        "image": "/assets/static.png",
         "caption": "Policy-driven CI gate that evaluates scanner results before allowing pull requests to pass"
       },
       "techStack": [

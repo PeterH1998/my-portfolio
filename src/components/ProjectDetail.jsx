@@ -1,16 +1,48 @@
-import { useNavigate, useParams, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext, useParams } from "react-router-dom";
+
+function Figure({ image, caption, title }) {
+  if (!image) {
+    return null;
+  }
+
+  return (
+    <figure>
+      <img
+        src={image}
+        alt={caption || title}
+        loading="lazy"
+        className="mb-3 w-full rounded-xl shadow-md"
+      />
+      {caption && (
+        <figcaption className="text-xs font-medium leading-relaxed opacity-70">
+          {caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
+function DetailSection({ title, children }) {
+  return (
+    <section className="mb-10 last:mb-0">
+      <h2 className="mb-5 font-serif text-[clamp(1.75rem,6vw,2.25rem)] leading-tight">
+        {title}
+      </h2>
+      {children}
+    </section>
+  );
+}
 
 export default function ProjectDetail() {
   const { projectId } = useParams();
   const navigate = useNavigate();
   const { projects } = useOutletContext();
 
-  const project = projects.find((p) => p.id === projectId);
+  const project = projects.find((item) => item.id === projectId);
 
   if (!project) return null;
 
-  // Find next/prev for the arrows
-  const currentIndex = projects.findIndex((p) => p.id === projectId);
+  const currentIndex = projects.findIndex((item) => item.id === projectId);
   const prevId =
     currentIndex > 0
       ? projects[currentIndex - 1].id
@@ -21,109 +53,98 @@ export default function ProjectDetail() {
       : projects[0].id;
 
   return (
-    <div className="w-full h-full bg-[#f3e9df]/80 backdrop-blur-2xl border border-white/50 rounded-[2rem] shadow-2xl flex flex-col overflow-hidden text-[#5c4d43]">
-      {/* Top Navigation Pill */}
-      <div className="p-6 pb-2">
-        <div className="bg-black/10 rounded-full p-1 flex items-center justify-between backdrop-blur-md border border-white/20">
+    <article className="flex h-full w-full flex-col overflow-hidden rounded-[1.5rem] border border-white/50 bg-[#f3e9df]/85 text-[#5c4d43] shadow-2xl backdrop-blur-2xl sm:rounded-[2rem]">
+      <div className="p-4 pb-2 sm:p-6 sm:pb-2">
+        <div className="flex items-center justify-between rounded-full border border-white/20 bg-black/10 p-1 backdrop-blur-md">
           <div className="flex items-center">
             <button
+              type="button"
               onClick={() => navigate(`/projects/${prevId}`)}
-              className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/40 transition"
+              className="flex h-10 w-10 items-center justify-center rounded-full text-lg transition hover:bg-white/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:h-8 sm:w-8"
+              aria-label="Previous project"
             >
-              &lt;
+              {"<"}
             </button>
             <button
+              type="button"
               onClick={() => navigate(`/projects/${nextId}`)}
-              className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/40 transition"
+              className="flex h-10 w-10 items-center justify-center rounded-full text-lg transition hover:bg-white/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:h-8 sm:w-8"
+              aria-label="Next project"
             >
-              &gt;
+              {">"}
             </button>
           </div>
 
-          <div className="flex-1 overflow-hidden px-4">
-            <p className="text-sm font-bold whitespace-nowrap opacity-60">
-              {project.title} &nbsp;&nbsp;&nbsp; {project.title}{" "}
-              &nbsp;&nbsp;&nbsp; {project.title}
+          <div className="min-w-0 flex-1 overflow-hidden px-3 sm:px-4">
+            <p className="truncate text-sm font-bold opacity-65">
+              {project.title}
             </p>
           </div>
 
           <button
+            type="button"
             onClick={() => navigate("/projects")}
-            className="w-8 h-8 flex items-center justify-center rounded-full bg-white/40 hover:bg-white/70 transition font-bold"
+            className="flex h-10 min-w-10 items-center justify-center rounded-full bg-white/45 px-3 text-xs font-bold uppercase tracking-wide transition hover:bg-white/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:h-8 sm:min-w-8"
+            aria-label="Close project details"
           >
-            ✕
+            Close
           </button>
         </div>
       </div>
 
-      {/* Scrollable Content */}
-      <div className="flex-1 overflow-y-auto px-10 pb-10 custom-scrollbar">
-        {/* Intro */}
-        <div className="mb-8 mt-4">
-          <p className="text-lg font-medium italic mb-6 opacity-80">
+      <div className="custom-scrollbar flex-1 overflow-y-auto px-5 pb-6 sm:px-8 sm:pb-8 lg:px-10 lg:pb-10">
+        <header className="mb-8 mt-4">
+          <p className="mb-6 text-base font-medium italic leading-relaxed opacity-80 sm:text-lg">
             {project.shortDescription}
           </p>
-          {project.details.introParagraphs.map((text, i) => (
-            <p key={i} className="text-sm leading-relaxed mb-4 opacity-90">
+          {project.details.introParagraphs.map((text) => (
+            <p key={text} className="mb-4 text-sm leading-relaxed opacity-90">
               {text}
             </p>
           ))}
-        </div>
+        </header>
 
-        {/* Highlights */}
         {project.details.highlights.length > 0 && (
-          <div className="mb-10">
-            <h3 className="font-serif text-3xl mb-6">Highlights</h3>
-            {project.details.highlights.map((item, i) => (
-              <div key={i} className="mb-6">
-                <img
-                  src={item.image}
-                  alt="Highlight"
-                  className="w-full rounded-xl mb-3 shadow-md"
+          <DetailSection title="Highlights">
+            <div className="space-y-6">
+              {project.details.highlights.map((item) => (
+                <Figure
+                  key={item.image}
+                  image={item.image}
+                  caption={item.caption}
+                  title="Project highlight"
                 />
-                <p className="text-xs font-medium opacity-70">{item.caption}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </DetailSection>
         )}
 
-        {/* Main Challenge */}
         {project.details.mainChallenge && (
-          <div className="mb-10">
-            <h3 className="font-serif text-3xl mb-6">Main Challenge</h3>
-            <p className="text-sm leading-relaxed mb-6 opacity-90">
+          <DetailSection title="Main Challenge">
+            <p className="mb-6 text-sm leading-relaxed opacity-90">
               {project.details.mainChallenge.text}
             </p>
-            {project.details.mainChallenge.image && (
-              <div>
-                <img
-                  src={project.details.mainChallenge.image}
-                  alt="Challenge"
-                  className="w-full rounded-xl mb-3 shadow-md"
-                />
-                <p className="text-xs font-medium opacity-70">
-                  {project.details.mainChallenge.caption}
-                </p>
-              </div>
-            )}
-          </div>
+            <Figure
+              image={project.details.mainChallenge.image}
+              caption={project.details.mainChallenge.caption}
+              title="Main challenge"
+            />
+          </DetailSection>
         )}
 
-        {/* Development Specs */}
         {project.details.techStack && (
-          <div>
-            <h3 className="font-serif text-3xl mb-6">Development Specs</h3>
-            <p className="text-sm mb-4 opacity-90">
+          <DetailSection title="Development Specs">
+            <p className="mb-4 text-sm opacity-90">
               For the stack, I used the following:
             </p>
-            <ul className="list-disc pl-5 space-y-2 text-sm opacity-90 font-medium">
-              {project.details.techStack.map((tech, i) => (
-                <li key={i}>{tech}</li>
+            <ul className="list-disc space-y-2 pl-5 text-sm font-medium opacity-90">
+              {project.details.techStack.map((tech) => (
+                <li key={tech}>{tech}</li>
               ))}
             </ul>
-          </div>
+          </DetailSection>
         )}
       </div>
-    </div>
+    </article>
   );
 }
